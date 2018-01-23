@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Character name: {{char.Name}}</mat-card-title>
+    <mat-card-subtitle>Class: {{char.Class}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>BaseHealth: {{char.BaseHealth}}</p>
+    <p>Current Health: {{char.Health}} </p>
+    <mat-progress-bar mode="determinate" [value]="percentHealth"></mat-progress-bar>
+    <p>Agility: {{char.Agility}} </p>
+    <p>Strength: {{char.Strength}} </p>
+    <p>Intelligence: {{char.Intelligence}} </p>
+  </mat-card-content>
+</mat-card>

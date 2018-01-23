@@ -1,0 +1,23 @@
+<div class="row">
+  <div *ngIf="!auth.isAuthenticated" class="col-4">
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input [(ngModel)]="name" type="text" class="form-control" id="username" placeholder="Enter username">
+      <small id="emailHelp" class="form-text text-muted">Will be shared with the kings of Danger crew</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input [(ngModel)]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="button" id="loginbutton" (click)="Login()" class="btn btn-primary">Login</button>
+    <a routerLink="/register" class="btn btn-primary">Register</a>
+  </div>
+  <h1 *ngIf="auth.isAuthenticated" class="display-1">
+
+    User {{ auth.user?.name }} is already logged in.
+
+    <button type="button" class="btn btn-primary" (click)="Logout()">Logout</button>
+
+  </h1>
+</div>

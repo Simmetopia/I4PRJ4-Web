@@ -1,0 +1,16 @@
+<form [formGroup]='searchUser' class="example-form" (ngSubmit)="OnSubmit(searchUser)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Username to search" formControlName="name">
+  </mat-form-field>
+  <button mat-raised-button type="submit">Submit</button>
+</form>
+
+<div *ngIf="user !== undefined">
+  <h1 class="display-4">Found User {{username}}
+    <div *ngIf="!user?.Players"> But he/she has not opladed data yet</div>
+  </h1>
+  <div class="row">
+    <app-save-detail [save]="user"> </app-save-detail>
+  </div>
+
+</div>

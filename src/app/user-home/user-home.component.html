@@ -1,0 +1,27 @@
+<h1 class="display-3">Hello, {{ auth?.user.name }}</h1>
+<div class="row" style="margin-top: 3em;">
+  <div class="col-2">
+    <strong>Gold: {{ auth?.user.totalGold }}</strong>
+  </div>
+  <div class="col-6">
+    <h5>Global Inventory</h5>
+    <p style="font-weight: bold">Items:</p>
+    <ol>
+      <li *ngFor="let item of auth.user.UserItems; let j = index">
+        <app-item-view [item]="item" (SellItems)="SetItemOnAuctionGlobal(j,$event)"> </app-item-view>
+      </li>
+    </ol>
+
+    <app-small-savegame-view *ngFor="let save of auth?.user.saves; let i = index" [save]="save" (SellFromSaveGameComponent)="SetItemOnAuction(i, $event)"></app-small-savegame-view>
+
+
+  </div>
+  <div class="col-4">
+    <h2>My Auctions</h2>
+    <div *ngFor="let item of myAuctions; let i = index">
+      <app-auction-houce [item]="item"></app-auction-houce>
+      <button *ngIf="item.isSold === 1" type="button" (click)="Claim(i)" class="btn btn-secondary">Claim</button>
+    </div>
+
+  </div>
+</div>

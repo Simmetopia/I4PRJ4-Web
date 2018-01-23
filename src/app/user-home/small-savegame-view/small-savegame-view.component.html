@@ -1,0 +1,9 @@
+<div class="border border-secondary rounded">
+  <h5>Save: {{ save.SaveId }}</h5>
+  <p style="font-weight: bold">Sample items from save:</p>
+  <ol>
+    <li *ngFor="let item of save.PlayerItems; let j = index">
+      <app-item-view [item]="item" (SellItems)="SetItemOnAuctionOne(j, $event)"></app-item-view>
+    </li>
+  </ol>
+</div>

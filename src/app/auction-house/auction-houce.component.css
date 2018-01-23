@@ -1,0 +1,4 @@
+.disabledAuction {
+  pointer-events: none;
+  cursor: default;
+}

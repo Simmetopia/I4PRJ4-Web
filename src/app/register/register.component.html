@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-4" style="margin-top: 2em;">
+    <form [formGroup]="RegisterForm" (ngSubmit)="registerUser(RegisterForm.value)">
+      <div class="form-group">
+        <input formControlName="name" id="sessionName" type="text" class="form-control" placeholder="Username..." [ngClass]="{ 'bg-danger': RegisterForm.controls.name.invalid && RegisterForm.controls.name.dirty}"
+        />
+      </div>
+      <div class=" form-group ">
+        <input formControlName="email" id="sessionEmail " type="email " class="form-control " placeholder="Email... " [ngClass]="{ 'bg-danger': RegisterForm.controls.email.invalid && RegisterForm.controls.email.dirty}"
+        />
+      </div>
+      <div class=" form-group ">
+        <input formControlName="password" id="sessionPassword " type="password" class="form-control" placeholder="Password... " [ngClass]="{'bg-danger': RegisterForm.controls.password.invalid && RegisterForm.controls.password.dirty}"
+        />
+      </div>
+      <button type="submit " class="btn btn-primary ">Submit</button>
+    </form>
+  </div>
+</div>

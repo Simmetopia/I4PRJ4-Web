@@ -1,0 +1,16 @@
+<div class="row">
+  <div [ngClass]="{'sold': auction?.isSold == 1 }" class="col-4">
+    <h1>Buy</h1>
+    Item: {{ auction?.item.Name }}
+    <br> Price: {{auction?.cost}}
+    <br> Sold by: {{ auction?.user.name }}
+    <hr> You have: {{ auth.user.totalGold }} Gold to spend
+    <div *ngIf="compare()">
+      <button type="button" (click)="BuyItem()" class="btn btn-lg btn-primary">Buy</button>
+    </div>
+    <div *ngIf="!compare()">
+      <span class="text-danger">You do not have enough money</span>
+    </div>
+
+  </div>
+</div>
